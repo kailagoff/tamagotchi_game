@@ -22,7 +22,7 @@ export class Tamagotchi {
   // }
   //
   areYouDead() {
-    if (this.foodLvl > 0) {
+    if (this.foodLvl > 0 || this.sleepLvl > 0 || this.playLvl > 0) {
       return false;
     } else {
       return true;
@@ -31,17 +31,17 @@ export class Tamagotchi {
 
   refreshGame() {
     if (!this.areYouDead()) {
-      setInterval(function() {
+      let count = setInterval(function() {
       $('.food-level').text(this.foodLvl);
       $('.rest-level').text(this.sleepLvl);
       $('.play-level').text(this.playLvl);
       }, 1000);
     } else {
       $('.fail').show();
-      $('#food-death').text(this.foodLvl);
+      $('#death').text();
+      clearInterval(count);
     }
   }
-
 
   feed() {
     this.foodLvl += 10;
@@ -60,5 +60,6 @@ export class Tamagotchi {
     this.foodLvl = 100;
     this.playLvl = 100;
     this.sleepLvl = 100;
+
   }
 }

@@ -18,7 +18,7 @@ $(document).ready(function() {
     $('.name').text(newTamagotchi.name);
 
     setInterval(function() {
-      newTamagotchi.refreshGame();
+    newTamagotchi.refreshGame();
     $('.food-level').text(newTamagotchi.foodLvl);
     $('.rest-level').text(newTamagotchi.sleepLvl);
     $('.play-level').text(newTamagotchi.playLvl);
