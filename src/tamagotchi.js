@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 export class Tamagotchi {
   constructor(name) {
     this.name = name;
@@ -27,15 +29,16 @@ export class Tamagotchi {
     }
   }
 
-
   refreshGame() {
     if (!this.areYouDead()) {
-      $('.food-level').html(this.foodLvl);
-      $('.rest-level').html(this.sleepLvl);
+      setInterval(function() {
+      $('.food-level').text(this.foodLvl);
+      $('.rest-level').text(this.sleepLvl);
       $('.play-level').text(this.playLvl);
+      }, 1000);
     } else {
       $('.fail').show();
-      $('#food-death').html(this.foodLvl);
+      $('#food-death').text(this.foodLvl);
     }
   }
 
