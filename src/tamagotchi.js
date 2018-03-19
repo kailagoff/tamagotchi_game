@@ -19,21 +19,26 @@ export class Tamagotchi {
   //   var intId = initializeTamagotchi(foodLvl, 1000);
   // }
   //
-  // refreshGame() {
-  //   if (!this.areYouAlive()) {
-  //
-  //   } else {
-  //     $('#food-death').html(this.foodLvl);
-  //   }
-  // }
-
-  areYouAlive() {
-  if (this.foodLvl > 0) {
-    return false;
-  } else {
-    alert ("You let him die. You monster.");
+  areYouDead() {
+    if (this.foodLvl > 0) {
+      return false;
+    } else {
+      return true;
     }
   }
+
+
+  refreshGame() {
+    if (!this.areYouDead()) {
+      $('.food-level').html(this.foodLvl);
+      $('.rest-level').html(this.sleepLvl);
+      $('.play-level').text(this.playLvl);
+    } else {
+      $('.fail').show();
+      $('#food-death').html(this.foodLvl);
+    }
+  }
+
 
   feed() {
     this.foodLvl += 10;

@@ -5,3 +5,18 @@
 .fail {
   display: none;
 }
+
+.jumbotron {
+  background-image: url("http://www.playandroid.com/wp-content/uploads/2013/02/Tamagotchi-by-Bandai-Logo.jpg");
+  height: 250px;
+  margin-left: 220px;
+  margin-right: 340px;
+}
+
+#show-game {
+  text-align: center;
+}
+
+#button-row {
+  align-items: center
+}

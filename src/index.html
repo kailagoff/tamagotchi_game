@@ -5,14 +5,15 @@
     <title>Tamagotchi</title>
   </head>
   <body>
-    <div class="jumbotron"><h1>Tamagotchi Game!</h1></div>
+    <div class="jumbotron text-center"><h1></h1></div>
 
     <div class="container">
       <form id="name-form">
         <div class="form-group">
           <label for="name">Enter a name for your new tamagotchi:</label>
           <input type="text" class="form-control" id="name">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <br>
+          <button id="name-button" type="submit" class="btn btn-primary">Submit</button>
         </div>
       </form>
 
@@ -21,8 +22,8 @@
         <h5>Food Level: <span class ="food-level"></span></h5>
         <h5>Rest Level: <span class ="rest-level"></span></h5>
         <h5>Play Level: <span class ="play-level"></span></h5>
-        <div class="row">
-          <button type="button" class="btn btn-primary" id="feed">Feed Me!</button><br>
+        <div id="button-row" class="row">
+          <button align="center" type="button" class="btn btn-primary" id="feed">Feed Me!</button><br>
           <button type="button" class="btn btn-primary" id="sleep">Put Me to Bed!</button><br>
           <button type="button" class="btn btn-primary" id="play">Play with Me!</button><br>
           <button type="button" class="btn btn-primary" id="pause">Pause!</button><br>

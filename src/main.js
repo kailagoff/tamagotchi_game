@@ -23,6 +23,7 @@ $(document).ready(function() {
     $('.play-level').text(newTamagotchi.playLvl);
     }, 1000);
 
+    // newTamagotchi.refreshGame();
 
     $('#feed').click(function() {
       newTamagotchi.feed();
