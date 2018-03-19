@@ -10,16 +10,19 @@ $(document).ready(function() {
 
     let name = $("input#name").val();
     let newTamagotchi = new Tamagotchi(name);
+    // newTamagotchi.areYouAlive();
 
-    console.log(name);
     $('#show-game').show();
     $('.name').text(newTamagotchi.name);
+    $('.food-level').text(newTamagotchi.foodLvl);
+    $('.rest-level').text(newTamagotchi.sleepLvl);
+    $('.play-level').text(newTamagotchi.playLvl);
 
-  });
 
-  $('#feed').click(function(event) {
-    event.preventDefault();
-
+  $('#feed').click(function() {
+    newTamagotchi.setHunger();
+    newTamagotchi.feed();
+    console.log(newTamagotchi.foodLvl);
   });
 
   $('#sleep').click(function(event) {
@@ -31,4 +34,5 @@ $(document).ready(function() {
     event.preventDefault();
 
   });
+});
 });

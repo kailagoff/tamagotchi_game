@@ -6,6 +6,7 @@ export class Tamagotchi {
     this.sleepLvl = 100;
   }
 
+
   setHunger() {
     setInterval(() => {
       this.foodLvl -= 10;
@@ -25,10 +26,10 @@ export class Tamagotchi {
   }
 
   areYouAlive() {
-    if ((this.foodLvl > 0) || (this.playLvl > 0) || (this.sleepLvl > 0)) {
+    if (this.foodLvl > 0) {
       return false;
     } else {
-      return true;
+      alert ("You let him die. You monster.");
     }
   }
 
