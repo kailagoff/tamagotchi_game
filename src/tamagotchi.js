@@ -12,6 +12,18 @@ export class Tamagotchi {
     }, 1000);
   }
 
+  setExercise() {
+    setInterval(() => {
+      this.playLvl -= 10;
+    }, 1000);
+  }
+
+  setRest() {
+    setInterval(() => {
+      this.sleepLvl -= 10;
+    }, 1000);
+  }
+
   areYouAlive() {
     if ((this.foodLvl > 0) || (this.playLvl > 0) || (this.sleepLvl > 0)) {
       return false;
@@ -25,11 +37,11 @@ export class Tamagotchi {
   }
 
   play() {
-    this.playLvl = 10;
+    this.playLvl += 10;
   }
 
   sleep() {
-    this.sleepLvl = 10;
+    this.sleepLvl += 10;
   }
 
   reset() {
