@@ -10,7 +10,6 @@ $(document).ready(function() {
 
     let name = $("input#name").val();
     let newTamagotchi = new Tamagotchi(name);
-    // newTamagotchi.areYouAlive();
 
     $('#show-game').show();
     $('#name-form').hide();

@@ -8,17 +8,30 @@ export class Tamagotchi {
 
   initializeTamagotchi() {
     setInterval(() => {
-      this.foodLvl -= 1;
+      this.foodLvl -= 10;
       this.playLvl -= 1;
       this.sleepLvl -= 1;
     }, 1000);
   }
 
+  // pause() {
+  //   let foodLvl = this.foodLvl;
+  //   var intId = initializeTamagotchi(foodLvl, 1000);
+  // }
+  //
+  // refreshGame() {
+  //   if (!this.areYouAlive()) {
+  //
+  //   } else {
+  //     $('#food-death').html(this.foodLvl);
+  //   }
+  // }
+
   areYouAlive() {
-    if (this.foodLvl > 0) {
-      return false;
-    } else {
-      alert ("You let him die. You monster.");
+  if (this.foodLvl > 0) {
+    return false;
+  } else {
+    alert ("You let him die. You monster.");
     }
   }
 
@@ -33,6 +46,7 @@ export class Tamagotchi {
   sleep() {
     this.sleepLvl += 10;
   }
+
 
   reset() {
     this.foodLvl = 100;

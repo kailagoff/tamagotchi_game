@@ -1,3 +1,7 @@
 #show-game {
   display: none;
 }
+
+.fail {
+  display: none;
+}
