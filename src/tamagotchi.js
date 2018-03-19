@@ -6,22 +6,11 @@ export class Tamagotchi {
     this.sleepLvl = 100;
   }
 
-
-  setHunger() {
+  initializeTamagotchi() {
     setInterval(() => {
-      this.foodLvl -= 10;
-    }, 1000);
-  }
-
-  setExercise() {
-    setInterval(() => {
-      this.playLvl -= 10;
-    }, 1000);
-  }
-
-  setRest() {
-    setInterval(() => {
-      this.sleepLvl -= 10;
+      this.foodLvl -= 1;
+      this.playLvl -= 1;
+      this.sleepLvl -= 1;
     }, 1000);
   }
 

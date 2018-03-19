@@ -13,26 +13,31 @@ $(document).ready(function() {
     // newTamagotchi.areYouAlive();
 
     $('#show-game').show();
+    $('#name-form').hide();
+
+    newTamagotchi.initializeTamagotchi();
     $('.name').text(newTamagotchi.name);
+
+    setInterval(function() {
     $('.food-level').text(newTamagotchi.foodLvl);
     $('.rest-level').text(newTamagotchi.sleepLvl);
     $('.play-level').text(newTamagotchi.playLvl);
+    }, 1000);
 
 
-  $('#feed').click(function() {
-    newTamagotchi.setHunger();
-    newTamagotchi.feed();
-    console.log(newTamagotchi.foodLvl);
+    $('#feed').click(function() {
+      newTamagotchi.feed();
+      $('.food-level').text(newTamagotchi.foodLvl);
+    });
+
+    $('#play').click(function() {
+      newTamagotchi.play();
+      $('.play-level').text(newTamagotchi.playLvl);
+    });
+
+    $('#sleep').click(function() {
+      newTamagotchi.sleep();
+      $('.rest-level').text(newTamagotchi.sleepLvl);
+    });
   });
-
-  $('#sleep').click(function(event) {
-    event.preventDefault();
-
-  });
-
-  $('#sleep').click(function(event) {
-    event.preventDefault();
-
-  });
-});
 });
