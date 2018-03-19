@@ -21,7 +21,7 @@ export class Tamagotchi {
   }
 
   feed() {
-    this.foodLvl = 10;
+    this.foodLvl += 10;
   }
 
   play() {
@@ -30,5 +30,11 @@ export class Tamagotchi {
 
   sleep() {
     this.sleepLvl = 10;
+  }
+
+  reset() {
+    this.foodLvl = 100;
+    this.playLvl = 100;
+    this.sleepLvl = 100;
   }
 }

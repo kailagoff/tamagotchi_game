@@ -6,6 +6,7 @@ describe('Tamagotchi', function() {
   beforeEach(function() {
     jasmine.clock().install();
     yochi.setHunger();
+    yochi.reset();
   });
 
   afterEach(function() {
@@ -24,12 +25,16 @@ describe('Tamagotchi', function() {
     expect(yochi.foodLvl).toEqual(70);
   });
 
+  it('should have a food level of 60 after 4001 milliseconds', function() {
+    jasmine.clock().tick(4001);
+    expect(yochi.foodLvl).toEqual(60);
+  });
+
   it('should let user know if their Tamagotchi is alive or not', function () {
     yochi.foodLvl = 0;
     yochi.playLvl = 0;
     yochi.sleepLvl = 0;
     expect(yochi.areYouAlive()).toEqual(true);
   });
-
 
 });
