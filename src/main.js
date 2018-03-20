@@ -42,6 +42,21 @@ $(document).ready(function() {
       newTamagotchi.sleep();
       $('.rest-level').text(newTamagotchi.sleepLvl);
     });
+
+    $.ajax({
+      url: ` http://api.openweathermap.org/data/2.5/weather?appid=0effcc3a7a3e9c55361acb5942f1ec7a&q=${city}&units=imperial`,
+      type: 'GET',
+      data: {
+        format: 'json'
+      },
+      success: function(response) {
+        let temp = Math.round(response.main.temp);
+        $('.current-weather').text(`Current temperature in ${city} is ${temp}.`)
+      },
+      error: function() {
+        $('.error-weather').text("Please try again.")
+      }
+    });
   });
 
   $("#gif").click(function() {
@@ -62,20 +77,5 @@ $(document).ready(function() {
    });
  });
 
-  $("#weather").click(function(city) {
-    $.ajax({
-      url: ` http://api.openweathermap.org/data/2.5/weather?appid=0effcc3a7a3e9c55361acb5942f1ec7a&q=${city}&units=imperial`,
-      type: 'GET',
-      data: {
-        format: 'json'
-      },
-      success: function(response) {
-        let temp = Math.round(response.main.temp);
-        $('#currentWeather').text(`Current temperature in ${city} is ${temp}.`)
-      },
-      error: function() {
-        $('#error-weather').text("Please try again.")
-      }
-    });
-  });
+
 });
