@@ -7,10 +7,32 @@
 }
 
 .jumbotron {
-  background-image: url("http://www.playandroid.com/wp-content/uploads/2013/02/Tamagotchi-by-Bandai-Logo.jpg");
-  height: 250px;
-  margin-left: 220px;
-  margin-right: 340px;
+  /* background-color: white;
+  background-image: url("https://upload.wikimedia.org/wikipedia/de/thumb/d/d7/Tamagotchi-logo.svg/2000px-Tamagotchi-logo.svg.png");
+  width: 1000px;
+  height: 400px;
+  padding-bottom: 450px;
+  paddin
+  background-repeat: no-repeat; */
+}
+
+#jumbo {
+  display: block;
+  max-width:3200px;
+  max-height:120px;
+  width: auto;
+  padding-left: 280px;
+}
+
+#game-image {
+  padding-left: 200px;
+  position: absolute;
+}
+
+#gotchiImg {
+  position: relative;
+  margin-left: 360px;
+  margin-top: 97px;
 }
 
 #show-game {
@@ -19,4 +41,100 @@
 
 #button-row {
   align-items: center
+}
+
+/* //button positioning */
+#feed {
+  background-color: white;
+  border: none;
+  color: pink;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50%;
+  position: relative; left: 355px; top: 380px;
+}
+
+#sleep {
+  background-color: white;
+  border: none;
+  color: pink;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50%;
+  position: relative; left: 357px; top: 400px;
+}
+
+#play {
+ background-color: white;
+ border: none;
+ color: pink;
+ padding: 20px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
+ margin: 4px 2px;
+ border-radius: 50%;
+ position: relative; left: 363px; top: 380px;
+}
+
+#pause {
+  background-color: gold;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50%;
+  position: absolute; right: 5px; top: 5px;
+}
+
+/* login box */
+.login {
+  height: 257px;
+  margin: 20px auto 0;
+  width: 298px;
+  font-family: 'Open Sans', sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  background: hsla(0, 0%, 90%, 0.5);
+  border: 2px solid #42464b;
+  border-radius: 12px;
+  /* position: fixed; */
+  width: 340px;
+  height: 100px;
+  top: 40%;
+  left: 50%;
+  margin-top: -90px;
+  margin-left: 300px;
+}
+
+
+input[id="name"] {
+  background: url('http://i.minus.com/ibhqW9Buanohx2.png') center left no-repeat, linear-gradient(top, #d6d7d7, #dee0e0);
+  border: 1px solid #a1a3a3;
+  border-radius: 7px;
+  box-shadow: 0 1px #a1a3a3;
+  box-sizing: border-box;
+  color: #696969;
+  height: 33px;
+  margin: 25px 0 0 13px;
+  padding-left: 20px;
+  transition: box-shadow .3s;
+  width: 170px;
+}
+
+#name-button {
+  margin-left: 70px;
 }
