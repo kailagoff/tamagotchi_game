@@ -41,14 +41,14 @@ export class Tamagotchi {
   refreshGame() {
     let count;
     // let newTamagotchi = new Tamagotchi;
-      count = setInterval(() => {
+    count = setInterval(() => {
       if (this.sleepLvl == 0) {
-      $('.fail').show();
-      $('#death').text();
-      clearInterval(count);
-    }
-  })
-}
+        $('.fail').show();
+        $('#death').text();
+        clearInterval(count);
+      }
+    });
+  }
 
   feed() {
     this.foodLvl += 10;
