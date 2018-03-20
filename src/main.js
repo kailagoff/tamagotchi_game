@@ -10,7 +10,7 @@ $(document).ready(function() {
   getGif();
   $("#name-form").submit(function(event) {
     event.preventDefault();
-    $('#giphy').hide();
+    $('#giphy').show();
 
     const name = $("input#name").val();
     const city = $("input#city").val();

@@ -2,6 +2,10 @@
   display: none;
 }
 
+#giphy {
+  display: none;
+}
+
 .fail {
   display: none;
 }
