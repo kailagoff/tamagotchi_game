@@ -7,7 +7,7 @@ import { getWeather } from './js/weather_api.js';
 import { getGif } from './js/giphy_api.js';
 
 $(document).ready(function() {
-    getGif();
+  getGif();
   $("#name-form").submit(function(event) {
     event.preventDefault();
     $('#giphy').hide();
