@@ -10,9 +10,11 @@ export class Tamagotchi {
 
   initializeTamagotchi() {
     setInterval(() => {
-      this.foodLvl -= 10;
-      this.playLvl -= 5;
-      this.sleepLvl -= 7;
+      if (this.playLvl >= 1 || this.sleepLvl >= 1 || this.foodLvl >= 1) {
+        this.foodLvl -= 10;
+        this.playLvl -= 10;
+        this.sleepLvl -= 10;
+      }
     }, 1000);
   }
 
@@ -21,44 +23,26 @@ export class Tamagotchi {
   //   var intId = initializeTamagotchi(foodLvl, 1000);
   // }
   //
-  areYouDead() {
-    if (this.foodLvl < 0 || this.sleepLvl < 0 || this.playLvl < 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  // refreshGame() {
-  //   let count;
-  //   if (!this.areYouDead()) {
-  //     count = setInterval(function() {
-  //     $('.food-level').text(this.foodLvl);
-  //     $('.rest-level').text(this.sleepLvl);
-  //     $('.play-level').text(this.playLvl);
-  //     }, 1000);
+  // areYouDead() {
+  //   if (this.foodLvl <= 0 || this.sleepLvl <= 0 || this.playLvl <= 0) {
+  //     return true;
   //   } else {
-  //     $('.fail').show();
-  //     $('#death').text();
-  //     clearInterval(count);
+  //     return false;
   //   }
   // }
 
   // my attempt at refreshGame
   refreshGame() {
     let count;
-    let newTamagotchi = new Tamagotchi;
+    // let newTamagotchi = new Tamagotchi;
       count = setInterval(() => {
-      if (this.foodLvl != 0) {
-        return newTamagotchi.areYouDead();
-    } else {
+      if (this.sleepLvl == 0) {
       $('.fail').show();
       $('#death').text();
       clearInterval(count);
     }
   })
 }
-
 
   feed() {
     this.foodLvl += 10;
@@ -71,7 +55,6 @@ export class Tamagotchi {
   sleep() {
     this.sleepLvl += 10;
   }
-
 
   reset() {
     this.foodLvl = 100;

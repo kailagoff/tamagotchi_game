@@ -18,10 +18,10 @@ $(document).ready(function() {
     $('.name').text(newTamagotchi.name);
 
     setInterval(function() {
-    newTamagotchi.refreshGame();
-    $('.food-level').text(newTamagotchi.foodLvl);
-    $('.rest-level').text(newTamagotchi.sleepLvl);
-    $('.play-level').text(newTamagotchi.playLvl);
+      newTamagotchi.refreshGame();
+      $('.food-level').text(newTamagotchi.foodLvl);
+      $('.rest-level').text(newTamagotchi.sleepLvl);
+      $('.play-level').text(newTamagotchi.playLvl);
     }, 1000);
 
 
@@ -40,4 +40,23 @@ $(document).ready(function() {
       $('.rest-level').text(newTamagotchi.sleepLvl);
     });
   });
+
+
+  $("#gif").click(function() {
+    $.ajax({
+       url: `http://api.giphy.com/v1/gifs/search?q=tamagotchi&api_key=25kcM6YQ2iAr9ur8AX7mqTPWdxVJw592`,
+       type: 'GET',
+       data: {
+         format: 'json'
+       },
+       success: function(response) {
+         let reply = response.data[1].images.original.url;
+         console.log(reply);
+         $('#giphy').html('<img src="' + reply + '">');
+       },
+       error: function() {
+         $('#errors').text("There was an error processing your request. Please try again.")
+       }
+   });
+ });
 });
