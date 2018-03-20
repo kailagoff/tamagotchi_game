@@ -8,7 +8,10 @@ $(document).ready(function() {
   $("#name-form").submit(function(event) {
     event.preventDefault();
 
-    let name = $("input#name").val();
+    const name = $("input#name").val();
+    const city = $("input#city").val();
+    console.log(city);
+
     let newTamagotchi = new Tamagotchi(name);
 
     $('#show-game').show();
@@ -41,7 +44,6 @@ $(document).ready(function() {
     });
   });
 
-
   $("#gif").click(function() {
     $.ajax({
        url: `http://api.giphy.com/v1/gifs/search?q=tamagotchi&api_key=25kcM6YQ2iAr9ur8AX7mqTPWdxVJw592`,
@@ -51,12 +53,29 @@ $(document).ready(function() {
        },
        success: function(response) {
          let reply = response.data[1].images.original.url;
-         console.log(reply);
+
          $('#giphy').html('<img src="' + reply + '">');
        },
        error: function() {
-         $('#errors').text("There was an error processing your request. Please try again.")
+         $('#error-giphy').text("There was an error processing your request. Please try again.")
        }
    });
  });
+
+  $("#weather").click(function(city) {
+    $.ajax({
+      url: ` http://api.openweathermap.org/data/2.5/weather?appid=0effcc3a7a3e9c55361acb5942f1ec7a&q=${city}&units=imperial`,
+      type: 'GET',
+      data: {
+        format: 'json'
+      },
+      success: function(response) {
+        let temp = Math.round(response.main.temp);
+        $('#currentWeather').text(`Current temperature in ${city} is ${temp}.`)
+      },
+      error: function() {
+        $('#error-weather').text("Please try again.")
+      }
+    });
+  });
 });

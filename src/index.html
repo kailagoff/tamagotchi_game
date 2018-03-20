@@ -20,6 +20,9 @@
               <label for="name">Tamagotchi Name:</label>
               <input type="text" id="name">
               <br>
+              <label for="city">Place of Birth:</label>
+              <input type="text" id="city">
+              <br>
               <button id="name-button" type="submit" class="btn btn-info">Submit</button>
             </div>
           </div>
@@ -45,10 +48,16 @@
         <p><span id="death"><img id="gotchiImg" style="height: 200px; width:200px;" src='images/gotchi.gif' /></span></p>
       </div>
 
-      <button type="button" id="gif" class="btn btn-info">Click for a gif</button>
-      <div id="giphy">
-      </div>
-      <div id="errors"></div>
+      <button type="button" id="gif" class="btn btn-info">Click for a gif!</button>
+      <br>
+      <button type="button" id="weather" class="btn btn-info">Click for the current weather!</button>
+
+      <div id="giphy"></div>
+      <div id="error-giphy"></div>
+
+      <div id="currentWeather"><p></p></div>
+      <div id="error-weather"></div>
+
     </div>
   </body>
 </html>
