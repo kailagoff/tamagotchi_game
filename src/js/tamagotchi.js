@@ -15,7 +15,7 @@ export class Tamagotchi {
         this.playLvl -= 10;
         this.sleepLvl -= 10;
       }
-    }, 1000);
+    }, 10000);
   }
 
   // pause() {
