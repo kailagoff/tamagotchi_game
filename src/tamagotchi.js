@@ -24,13 +24,19 @@ export class Tamagotchi {
   // }
   //
   // areYouDead() {
-  //   if (this.foodLvl <= 0 || this.sleepLvl <= 0 || this.playLvl <= 0) {
+  //   if (this.foodLvl < 0 || this.sleepLvl < 0 || this.playLvl < 0) {
   //     return true;
   //   } else {
   //     return false;
   //   }
   // }
-
+  //
+  // //new display results
+  // displayResults() {
+  //   if (!this.areYouDead()) {
+  //     $()
+  //   }
+  // }
   // my attempt at refreshGame
   refreshGame() {
     let count;

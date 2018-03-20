@@ -30,6 +30,7 @@
 
         <div id="show-game">
           <h2>Welcome, <span class="name"></span>!</h2>
+          <h3>Your pet was born in <span class="city"></span>!</h3>
           <h3><span class="current-weather"></span></h3>
           <h3><span class="error-weather"></span></h3>
           <p>Food Level: <span class ="food-level"></span></p>
@@ -38,8 +39,9 @@
           <div id="button-row" class="row">
             <p><img id="game-image" src="https://i.pinimg.com/originals/34/94/f9/3494f9cdfb768bbb035f387adc636bf8.png" width="750px" length="750px"</p>
             <button type="button" class="btn btn-primary" id="feed">feed</button>
+
             <button type="button" class="btn btn-primary" id="sleep">nap</button>
-            <button type="button" class="btn btn-primary" id="play">party</button>
+            <button type="button" class="btn btn-primary" id="play">party<span class="playPic"><img id="gotchiImg" style="height: 200px; width:200px;" src='images/gotchi.gif'></span></button>
             <!-- <label for="button">Pause!</label>
             <button type="button" class="btn btn-primary" id="pause"></button><br> -->
           </div>
@@ -50,12 +52,8 @@
         <p><span id="death"><img id="gotchiImg" style="height: 200px; width:200px;" src='images/gotchi.gif' /></span></p>
       </div>
 
-      <button type="button" id="gif" class="btn btn-info">Click for a gif!</button>
-      <br>
-
-      <div id="giphy"></div>
-      <div id="error-giphy"></div>
-
+      <div id="giphy"><button type="button" id="gif" class="btn btn-info">Click for a gif!</button>
+      <br><div id="error-giphy"></div></div>
 
     </div>
   </body>

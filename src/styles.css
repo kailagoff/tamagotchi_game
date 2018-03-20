@@ -6,6 +6,10 @@
   display: none;
 }
 
+.playPic {
+  display: none;
+}
+
 .jumbotron {
   /* background-color: white;
   background-image: url("https://upload.wikimedia.org/wikipedia/de/thumb/d/d7/Tamagotchi-logo.svg/2000px-Tamagotchi-logo.svg.png");
