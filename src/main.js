@@ -7,7 +7,7 @@ import { getWeather } from './js/weather_api.js';
 import { getGif } from './js/giphy_api.js';
 
 $(document).ready(function() {
-  getGif();
+    getGif();
   $("#name-form").submit(function(event) {
     event.preventDefault();
     $('#giphy').hide();
@@ -16,21 +16,20 @@ $(document).ready(function() {
     const city = $("input#city").val();
     getWeather(city);
 
-    let newTamagotchi = new Tamagotchi(name);
-
     $('#show-game').show();
     $('#name-form').hide();
 
-    newTamagotchi.initializeTamagotchi();
+    let newTamagotchi = new Tamagotchi(name);
+    newTamagotchi.setFood();
+    newTamagotchi.setPlay();
+    newTamagotchi.setSleep();
+
     $('.name').text(newTamagotchi.name);
     $('.city').text(city);
-
-    setInterval(function() {
-      newTamagotchi.refreshGame();
-      $('.food-level').text(newTamagotchi.foodLvl);
-      $('.rest-level').text(newTamagotchi.sleepLvl);
-      $('.play-level').text(newTamagotchi.playLvl);
-    }, 1000);
+    $('.food-level').text(newTamagotchi.foodLvl);
+    $('.rest-level').text(newTamagotchi.sleepLvl);
+    $('.play-level').text(newTamagotchi.playLvl);
+    newTamagotchi.refreshView();
 
 
     $('#feed').click(function() {

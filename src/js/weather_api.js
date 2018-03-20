@@ -1,5 +1,3 @@
-
-
 export function getWeather(city) {
   /* eslint-disable */
   const weatherKey = process.env.WEATHER_API_KEY;
