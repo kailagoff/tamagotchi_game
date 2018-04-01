@@ -24,10 +24,6 @@ _Users are able to create a new Tamagotchi and give it a name. They are also abl
 
 ## Setup/Installation Requirements
 
-   * Clone the project to your local machine from `[GitHub](http://github.com)`
-
-   * Move into the project directory with `$cd tamagotchi_game`
-
    * Install npm dependencies with `$npm install`
 
    * Build, start, and open the project with `$npm start`
